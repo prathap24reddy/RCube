@@ -21,11 +21,11 @@ public:
     };
     enum class COLOR {
         WHITE,
-        YELLOW,
         GREEN,
         RED,
         BLUE,
-        ORANGE
+        ORANGE,
+        YELLOW
     };
     enum class MOVE {
         L, LPRIME, L2,
@@ -36,7 +36,7 @@ public:
         B, BPRIME, B2
     };
     // Returns the color of the cubie at (row, col)
-    virtual COLOR getColor(Face face, usigned row, unsigned col) const =0;
+    virtual COLOR getColor(FACE face, unsigned int row, unsigned int col) const =0;
 
     // Returns the first letter of the given color
     static char getColorLetter(COLOR color);
@@ -45,7 +45,7 @@ public:
     virtual bool isSolved() const = 0;
 
     // Returns the move in the string format
-    static string getMove(Move ind);
+    static string getMove(MOVE ind);
 
     // print the cube
     void print () const;

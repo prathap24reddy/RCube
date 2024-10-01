@@ -24,7 +24,7 @@ char RubiksCube::getColorLetter(COLOR color) {
 }
 
 // Describe move using an index
-string RubiksCube::getMove(Move ind) {
+string RubiksCube::getMove(MOVE ind) {
     switch (ind) {
         case MOVE::L:
             return "L";
@@ -156,7 +156,7 @@ void RubiksCube::print() const {
             cout<<" ";
         }
         for(int col=0;col<3;col++) {
-            cout<getColorLetter(getColor(FACE::UP,row,col));
+            cout<<getColorLetter(getColor(FACE::UP,row,col));
         }
         cout<<"\n";
     }
@@ -181,7 +181,14 @@ void RubiksCube::print() const {
         }
         for(int col=0;col<3;col++) {
             cout<<getColorLetter(getColor(FACE::DOWN,row,col))<<" ";
-        }
-        cout<<"\n";
-    }cout<<"\n";
+        } cout<<"\n";
+    } cout<<"\n";
+}
+vector<RubiksCube::MOVE> RubiksCube::randomShuffleCube(unsigned int times) {
+    vector<MOVE>moves_performed;
+    srand(time(0));
+    for(int i=0;i<times;i++) {
+        int selectMove=(rand()%18);
+        moves_performed.push_back()
+    }
 }
